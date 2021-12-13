@@ -1,0 +1,129 @@
+THE ASSIGNMENT:
+ 
+
+Starting, not saving, saving, and exiting vi.
+
+The different modes
+
+Vi searching
+
+Moving the cursor
+
+Inserting & deleting text
+
+Cut, copy, paste 
+
+Insert command output in a vi text file 
+
+.exrc file and some useful commands to put in it.
+ 
+
+ --------------- HOW TO USE VIM: ----------------
+(a terrible tutorial written by Tristan Werden)
+ 
+
+STARTING VIM:
+Start vim by going to the terminal and using the command $vim <filename>
+ 
+
+<filename> is either the name of the file you want to open, or if no file exists,
+it will become the name of the new file that you are creating.
+ 
+
+SAVING, NOT SAVING, AND EXITING:
+Saving is easy! In normal mode, use the command w to write to file!
+ 
+To save and exit, use :wq. (ZZ also works, and is technically faster)
+ 
+
+to just exit, use :q.
+ 
+
+VIM's DIFFERENT MODES:
+--NORMAL MODE--
+use : to input commands to the console. This command prompt is where
+you will spend the majority of your time in Vim
+
+
+--INSERT MODE--
+normally activate by pressing i. lets you type characters into the document.
+ 
+
+VI SEARCHING:
+search by using the / or ? commands in NORMAL mode
+
+
+/ will search for the word you put after from the beginning of the file
+? will search for the word you put after from the end of the file
+
+
+MOVING THE CURSOR:
+I personally use the arrow keys, but when in normal mode you can also use HJKL.
+
+
+H > left
+J > up
+k > down
+L > right
+
+
+INSERTING AND DELETING CONTENT, AND CUT, COPY, PASTE:
+--Special Insert Mode Activation--
+O - insert text one line up
+a - insert text after the cursor
+A (most useful) - insert text at end of line
+
+
+--Cut, Copy, and Paste Commands (as well as deletion fun)--
+y - copy whatever is selected
+yy - copy line
+p - paste copied text
+dd - Delete the whole line
+
+
+--Undo and Redo--
+u - undo
+ctrl+r - redo
+
+
+INSERT COMMAND OUTPUT INTO A TEXT FILE:
+It's super easy - do the command. For example, let's say we are
+listing a directory structure. We use ls, or ls -a if we need hidden documents.
+
+
+then, after that, put > <FileName>. This will overwrite whatever is in <FileName> and
+put the output of the command in there. (use >> to append to end instead of overwrite)
+
+
+HOW TO USE .exrc OR .vimrc
+.exrc is the configuration file for vi, the application that vim is based in. Generally,
+you won't use .exrc to configure vim, as vi will also pull from there, meaning that if
+you have to use base vi and you have your vim configs in there, vi will throw a fit.
+
+
+Instead, for vim, you will almost always put your config commands into .vimrc.
+
+
+SOME GOOD THINGS TO PUT INTO .vimrc:
+
+
+--Built-in Syntax Highlighting--
+It's not perfect, but it works well for several different coding languages:
+
+
+if has('syntax')
+syntax on
+endif
+
+
+--File-Typing--
+Allows it to sometimes auto-indent properly if it's a recognized file-type
+
+
+if has('filetype')
+filetype indent plugin on
+endif
+
+
+--Better Command-Line auto-complete--
+set wildmenu
