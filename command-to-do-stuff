@@ -1,0 +1,4 @@
+find ~ -type f \( -name '*.swp' -o -name '*~' -o -name '*.bak' -o -name '.netrwhist' \) -delete ;
+grep -l oncology *.html >> oncology-pages ;
+grep -l radiology *.html >> radiology-pages ;
+diff radiology-pages oncology-pages >> filedifferences
